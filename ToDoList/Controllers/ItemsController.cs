@@ -18,7 +18,9 @@ namespace ToDoList.Controllers
 
     public ActionResult Index()
     {
-      return View(_db.Items.ToList());
+      List<Item> model = _db.Items.Include(items => items.Categories).ToList();      
+      List<Item> sortedList = model.OrderBy(o => o.DueDate).ToList();
+      return View(sortedList);
     }
     public ActionResult Create()
     {

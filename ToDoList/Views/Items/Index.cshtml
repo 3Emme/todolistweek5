@@ -13,5 +13,15 @@
 
 @foreach (Item item in Model)
 {
-  <li>@item.Description</li>
+  @if (item.Completed == false)
+  {
+    <li>@item.DueDate | @Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId }) | Not yet completed</li>
+  } 
+  else
+  {
+    <li>@item.DueDate | @Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId }) | Completed</li>
+  }
 }
+
+<p>@Html.ActionLink("Add new item", "Create")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>

@@ -14,10 +14,13 @@
 
     @Html.LabelFor(model => model.Description)
     @Html.EditorFor(model => model.Description)
-
-    @Html.Label("Select category")
-    @Html.DropDownList("CategoryId")
-
+    @Html.LabelFor(model => model.DueDate)
+    @Html.EditorFor(model => model.DueDate)
+    @Html.DropDownList("Completed",new List<SelectListItem>
+    {
+      new SelectListItem {Text = "Not yet completed", Value = "false"},
+      new SelectListItem {Text = "Completed", Value = "true"},
+    }, "Select completion status")
     <input type="submit" value="Save" />
 }
 

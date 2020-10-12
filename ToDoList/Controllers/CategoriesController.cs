@@ -13,7 +13,7 @@ namespace ToDoList.Controllers
 
     public CategoriesController(ToDoListContext db)
     {
-      _db = db;
+      _db = db ;
     }
 
     public ActionResult Index()

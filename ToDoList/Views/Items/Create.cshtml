@@ -10,6 +10,8 @@
 {
     @Html.LabelFor(model => model.Description)
     @Html.TextBoxFor(model => model.Description)
+    @Html.LabelFor(model => model.DueDate)
+    @Html.TextBoxFor(model => model.DueDate)
 
     @Html.Label("Select category")
     @Html.DropDownList("CategoryId")
